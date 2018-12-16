@@ -15,4 +15,9 @@ class TodoFeatures: XCTestCase, TodoSteps {
         then_TODO一覧画面が表示される()
     }
     
+    func test_TODO一覧画面からTODO登録画面に遷移できる() {
+        given_TODO一覧画面にいる状態で()
+        when_＋ボタンを押すと()
+        then_TODO登録画面が表示される()
+    }
 }

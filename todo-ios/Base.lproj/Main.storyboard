@@ -21,7 +21,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TODO一覧" id="htZ-FT-eKf"/>
+                    <navigationItem key="navigationItem" title="TODO一覧" id="htZ-FT-eKf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5ne-ac-zxK"/>
+                    </navigationItem>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="666" y="-85"/>
