@@ -20,4 +20,12 @@ class TodoFeatures: XCTestCase, TodoSteps {
         when_＋ボタンを押すと()
         then_TODO登録画面が表示される()
     }
+    
+    func test_TODO登録画面のフォーム() {
+        given_TODO一覧画面にいる状態で()
+        when_TODO登録画面に遷移したとき()
+        then_TODO名の入力欄が表示される()
+        then_登録ボタンが表示される()
+        then_TODO一覧ボタン（戻るボタン）が表示される()
+    }
 }
