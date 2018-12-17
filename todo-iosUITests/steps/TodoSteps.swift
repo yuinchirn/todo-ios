@@ -40,16 +40,28 @@ protocol TodoSteps {
 
 extension TodoSteps {
     
+    func isInTodoListView() -> Bool {
+       return XCUIApplication().navigationBars["TODO一覧"].exists
+    }
+    
+    func isInTodoAddView() -> Bool {
+        return XCUIApplication().navigationBars["TODO登録"].exists
+    }
+    
+    func tapAddButton() {
+        XCUIApplication().buttons["Add"].tap()
+    }
+    
     // given
     func given_TODO一覧画面にいる状態で() {
         XCUIApplication().launch()
-        XCTAssertTrue(XCUIApplication().navigationBars["TODO一覧"].exists)
+        XCTAssertTrue(isInTodoListView())
     }
     
     func given_TODO登録画面に遷移した状態で() {
         XCUIApplication().launch()
-        XCUIApplication().buttons["Add"].tap()
-        XCTAssertTrue(XCUIApplication().navigationBars["TODO登録"].exists)
+        tapAddButton()
+        XCTAssertTrue(isInTodoAddView())
     }
     
     // when
@@ -58,12 +70,12 @@ extension TodoSteps {
     }
     
     func when_＋ボタンを押すと() {
-        XCUIApplication().buttons["Add"].tap()
+        tapAddButton()
     }
     
     func when_TODO登録画面に遷移したとき() {
-        XCUIApplication().buttons["Add"].tap()
-        XCTAssertTrue(XCUIApplication().navigationBars["TODO登録"].exists)
+        tapAddButton()
+        XCTAssertTrue(isInTodoAddView())
     }
     
     func when_TODO一覧ボタンを押すと() {
@@ -73,11 +85,11 @@ extension TodoSteps {
     // then
     func then_TODO一覧画面が表示される() {
        // タイトルがTODO一覧であるNavigationBarが存在することでTODO一覧画面が表示されていることを確認
-        XCTAssertTrue(XCUIApplication().navigationBars["TODO一覧"].exists)
+        XCTAssertTrue(isInTodoListView())
     }
     
     func then_TODO登録画面が表示される() {
-        XCTAssertTrue(XCUIApplication().navigationBars["TODO登録"].exists)
+        XCTAssertTrue(isInTodoAddView())
     }
     
     func then_TODO名の入力欄が表示される() {
@@ -93,6 +105,6 @@ extension TodoSteps {
     }
     
     func then_TODO一覧画面に遷移する() {
-        XCTAssertTrue(XCUIApplication().navigationBars["TODO一覧"].exists)
+        XCTAssertTrue(isInTodoListView())
     }
 }
