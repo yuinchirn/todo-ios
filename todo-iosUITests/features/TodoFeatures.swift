@@ -35,4 +35,12 @@ class TodoFeatures: XCTestCase, TodoSteps {
         then_TODO一覧画面に遷移する()
     }
     
+    func test_TODO登録画面でTODOを登録できる() {
+        given_TODO一覧画面に掃除という項目がなく()
+        given_TODO登録画面に遷移した状態で()
+        when_TODO名の欄に掃除と入力して登録ボタンを押すと()
+        then_TODO一覧画面に遷移する()
+        then_TODO一覧に掃除という項目が表示される()
+    }
+    
 }

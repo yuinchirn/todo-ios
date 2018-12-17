@@ -15,6 +15,8 @@ protocol TodoSteps {
     
     func given_TODO登録画面に遷移した状態で()
     
+    func given_TODO一覧画面に掃除という項目がなく()
+    
     // when
     func when_アプリが起動すると()
     
@@ -23,6 +25,8 @@ protocol TodoSteps {
     func when_TODO登録画面に遷移したとき()
     
     func when_TODO一覧ボタンを押すと()
+    
+    func when_TODO名の欄に掃除と入力して登録ボタンを押すと()
 
     // then
     func then_TODO一覧画面が表示される()
@@ -36,6 +40,8 @@ protocol TodoSteps {
     func then_TODO一覧ボタン（戻るボタン）が表示される()
     
     func then_TODO一覧画面に遷移する()
+    
+    func then_TODO一覧に掃除という項目が表示される()
 }
 
 extension TodoSteps {
@@ -52,6 +58,10 @@ extension TodoSteps {
         XCUIApplication().buttons["Add"].tap()
     }
     
+    func exists掃除cell() -> Bool {
+        return XCUIApplication().staticTexts["掃除"].exists
+    }
+    
     // given
     func given_TODO一覧画面にいる状態で() {
         XCUIApplication().launch()
@@ -62,6 +72,12 @@ extension TodoSteps {
         XCUIApplication().launch()
         tapAddButton()
         XCTAssertTrue(isInTodoAddView())
+    }
+    
+    func given_TODO一覧画面に掃除という項目がなく() {
+        XCUIApplication().launch()
+        XCTAssertTrue(isInTodoListView())
+        XCTAssertFalse(exists掃除cell())
     }
     
     // when
@@ -80,6 +96,12 @@ extension TodoSteps {
     
     func when_TODO一覧ボタンを押すと() {
         XCUIApplication().buttons["TODO一覧"].tap()
+    }
+    
+    func when_TODO名の欄に掃除と入力して登録ボタンを押すと() {
+        XCUIApplication().textFields["TODO名"].tap()
+        XCUIApplication().textFields["TODO名"].typeText("掃除")
+        XCUIApplication().buttons["登録"].tap()
     }
     
     // then
@@ -106,5 +128,9 @@ extension TodoSteps {
     
     func then_TODO一覧画面に遷移する() {
         XCTAssertTrue(isInTodoListView())
+    }
+    
+    func then_TODO一覧に掃除という項目が表示される() {
+        XCTAssertTrue(exists掃除cell())
     }
 }
