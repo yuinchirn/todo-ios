@@ -17,6 +17,9 @@
 		F20B693021C644AB002D5168 /* todo_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20B692F21C644AB002D5168 /* todo_iosUITests.swift */; };
 		F20B694121C64654002D5168 /* TodoFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20B694021C64654002D5168 /* TodoFeatures.swift */; };
 		F20B694321C64662002D5168 /* TodoSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20B694221C64662002D5168 /* TodoSteps.swift */; };
+		F20B694721C92417002D5168 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20B694621C92417002D5168 /* AddTodoViewController.swift */; };
+		F2DB761E21C930AB0015FB02 /* todo_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F20B691321C644AA002D5168 /* todo_ios.xcdatamodeld */; };
+		F2DB762021C951D60015FB02 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB761F21C951D60015FB02 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,8 @@
 		F20B693121C644AB002D5168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F20B694021C64654002D5168 /* TodoFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoFeatures.swift; sourceTree = "<group>"; };
 		F20B694221C64662002D5168 /* TodoSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSteps.swift; sourceTree = "<group>"; };
+		F20B694621C92417002D5168 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
+		F2DB761F21C951D60015FB02 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +110,13 @@
 			children = (
 				F20B690C21C644AA002D5168 /* AppDelegate.swift */,
 				F20B690E21C644AA002D5168 /* ViewController.swift */,
+				F20B694621C92417002D5168 /* AddTodoViewController.swift */,
 				F20B691021C644AA002D5168 /* Main.storyboard */,
 				F20B691621C644AB002D5168 /* Assets.xcassets */,
 				F20B691821C644AB002D5168 /* LaunchScreen.storyboard */,
 				F20B691B21C644AB002D5168 /* Info.plist */,
 				F20B691321C644AA002D5168 /* todo_ios.xcdatamodeld */,
+				F2DB761F21C951D60015FB02 /* StorageManager.swift */,
 			);
 			path = "todo-ios";
 			sourceTree = "<group>";
@@ -281,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F20B694721C92417002D5168 /* AddTodoViewController.swift in Sources */,
 				F20B690F21C644AA002D5168 /* ViewController.swift in Sources */,
+				F2DB762021C951D60015FB02 /* StorageManager.swift in Sources */,
 				F20B691521C644AA002D5168 /* todo_ios.xcdatamodeld in Sources */,
 				F20B690D21C644AA002D5168 /* AppDelegate.swift in Sources */,
 			);
@@ -300,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F20B694121C64654002D5168 /* TodoFeatures.swift in Sources */,
+				F2DB761E21C930AB0015FB02 /* todo_ios.xcdatamodeld in Sources */,
 				F20B694321C64662002D5168 /* TodoSteps.swift in Sources */,
 				F20B693021C644AB002D5168 /* todo_iosUITests.swift in Sources */,
 			);
